@@ -16,22 +16,29 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment fragment = null;
-            int id = item.getItemId();
 
-            if (id == R.id.navigation_home) {
-                fragment = new my();
-            }
-            else if(id == R.id.navigation_dashboard) {
-                fragment = new reminder();
-            }
-            else if(id == R.id.navigation_notifications){
-                fragment = new about();
-            }
-            getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commitNow();
+            int id = item.getItemId();
+            changePage(id);
             return true;
+
         }
+
     };
+    private void changePage(int id) {
+        Fragment fragment = null;
+        if (id == R.id.navigation_home) {
+            fragment = new my();
+        }
+        else if(id == R.id.navigation_dashboard) {
+            fragment = new reminder();
+        }
+        else if(id == R.id.navigation_notifications){
+            fragment = new about();
+        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, fragment).commitNow();
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        changePage(R.id.navigation_home);
     }
 
 }
