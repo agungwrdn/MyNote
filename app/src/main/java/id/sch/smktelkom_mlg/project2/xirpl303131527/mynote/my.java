@@ -26,6 +26,8 @@ import id.sch.smktelkom_mlg.project2.xirpl303131527.mynote.db.DatabaseAccess;
 public class my extends Fragment {
 
 
+    private FloatingActionButton floatingActionButton;
+
     public my() {
         // Required empty public constructor
     }
@@ -37,10 +39,20 @@ public class my extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_my,
                 container, false);
+        this.floatingActionButton = (FloatingActionButton) rootView.findViewById(R.id.FAB);
 
+        this.floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onAddClicked();
+            }
+        });
 
         return rootView;
     }
 
-
+    public void onAddClicked() {
+        Intent intent = new Intent(getActivity().getApplication(),EditActivity.class);
+        startActivity(intent);
+    }
 }

@@ -63,14 +63,7 @@ public class MainActivity extends AppCompatActivity {
         this.databaseAccess = DatabaseAccess.getInstance(this);
 
         this.listView = (ListView) inflatedView.findViewById(R.id.listView);
-        this.floatingActionButton = (FloatingActionButton) inflatedView.findViewById(R.id.FAB);
 
-        this.floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onAddClicked();
-            }
-        });
 
         this.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -101,10 +94,7 @@ public class MainActivity extends AppCompatActivity {
         this.listView.setAdapter(adapter);
     }
 
-    public void onAddClicked() {
-        Intent intent = new Intent(this, EditActivity.class);
-        startActivity(intent);
-    }
+
 
     public void onDeleteClicked(Memo memo) {
         databaseAccess.open();
