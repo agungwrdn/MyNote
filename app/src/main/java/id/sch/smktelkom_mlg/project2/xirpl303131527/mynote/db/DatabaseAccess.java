@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import id.sch.smktelkom_mlg.project2.xirpl303131527.mynote.Memo;
+import id.sch.smktelkom_mlg.project2.xirpl303131527.mynote.my;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -74,4 +75,5 @@ public class DatabaseAccess {
         cursor.close();
         return memos;
     }
+
 }
