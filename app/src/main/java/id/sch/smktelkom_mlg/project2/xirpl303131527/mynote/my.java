@@ -25,7 +25,6 @@ import id.sch.smktelkom_mlg.project2.xirpl303131527.mynote.db.DatabaseAccess;
  */
 public class my extends Fragment {
 
-
     private FloatingActionButton floatingActionButton;
     private ListView listView;
     private List<Memo> memos;

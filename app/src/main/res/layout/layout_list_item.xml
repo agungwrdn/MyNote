@@ -8,15 +8,15 @@
 
         <ImageView
             android:id="@+id/btnEdit"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignParentLeft="true"
             android:src="@drawable/edit" />
 
         <ImageView
             android:id="@+id/btnDelete"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:src="@drawable/delete" />
 
